@@ -8,11 +8,13 @@ using { /Verse.org/Colors }
 using { /UnrealEngine.com/Temporary/UI }
 using { /UnrealEngine.com/Temporary/SpatialMath }
 
-ImageSize:vector2 = vector2{X := 250.0, Y := 250.0}
+ImageSize:vector2 = vector2{X := 400.0, Y := 400.0}
 
 VoteUICanvasDevice := class():
 
     MyAgentObj: agent
+
+    var WinnerMiniGameIs :int = 0
 
     var VoteButton01 :button_loud = button_loud{}
     var VoteButton02 :button_loud = button_loud{}
@@ -23,20 +25,73 @@ VoteUICanvasDevice := class():
     VoteText03 : text_block = text_block{DefaultTextColor := NamedColors.White}
     
     MiniGamesImages : []texture_block = array{        
-        MiniGameImage1 : texture_block = texture_block{ DefaultImage := Images.GameMode_1, DefaultDesiredSize := ImageSize}
-        MiniGameImage2 : texture_block = texture_block{ DefaultImage := Images.GameMode_2, DefaultDesiredSize := ImageSize}
-        MiniGameImage3 : texture_block = texture_block{ DefaultImage := Images.GameMode_3, DefaultDesiredSize := ImageSize}
-        MiniGameImage4 : texture_block = texture_block{ DefaultImage := Images.GameMode_4, DefaultDesiredSize := ImageSize}
-        MiniGameImage5 : texture_block = texture_block{ DefaultImage := Images.GameMode_5, DefaultDesiredSize := ImageSize}
-        MiniGameImage6 : texture_block = texture_block{ DefaultImage := Images.GameMode_6, DefaultDesiredSize := ImageSize}
-        MiniGameImage7 : texture_block = texture_block{ DefaultImage := Images.GameMode_7, DefaultDesiredSize := ImageSize}
-        MiniGameImage8 : texture_block = texture_block{ DefaultImage := Images.GameMode_8, DefaultDesiredSize := ImageSize}
-        MiniGameImage9 : texture_block = texture_block{ DefaultImage := Images.GameMode_9, DefaultDesiredSize := ImageSize}
+        MiniGameImage001 : texture_block = texture_block{ DefaultImage := Images.Image001, DefaultDesiredSize := ImageSize}
+        MiniGameImage002 : texture_block = texture_block{ DefaultImage := Images.Image002, DefaultDesiredSize := ImageSize}
+        MiniGameImage003 : texture_block = texture_block{ DefaultImage := Images.Image003, DefaultDesiredSize := ImageSize}
+        MiniGameImage004 : texture_block = texture_block{ DefaultImage := Images.Image004, DefaultDesiredSize := ImageSize}
+        MiniGameImage005 : texture_block = texture_block{ DefaultImage := Images.Image005, DefaultDesiredSize := ImageSize}
+        MiniGameImage006 : texture_block = texture_block{ DefaultImage := Images.Image006, DefaultDesiredSize := ImageSize}
+        MiniGameImage007 : texture_block = texture_block{ DefaultImage := Images.Image007, DefaultDesiredSize := ImageSize}
+        MiniGameImage008 : texture_block = texture_block{ DefaultImage := Images.Image008, DefaultDesiredSize := ImageSize}
+        MiniGameImage009 : texture_block = texture_block{ DefaultImage := Images.Image009, DefaultDesiredSize := ImageSize}
+        MiniGameImage010 : texture_block = texture_block{ DefaultImage := Images.Image010, DefaultDesiredSize := ImageSize}
+        MiniGameImage011 : texture_block = texture_block{ DefaultImage := Images.Image011, DefaultDesiredSize := ImageSize}
+        MiniGameImage012 : texture_block = texture_block{ DefaultImage := Images.Image012, DefaultDesiredSize := ImageSize}
+        MiniGameImage013 : texture_block = texture_block{ DefaultImage := Images.Image013, DefaultDesiredSize := ImageSize}
+        MiniGameImage014 : texture_block = texture_block{ DefaultImage := Images.Image014, DefaultDesiredSize := ImageSize}
+        MiniGameImage015 : texture_block = texture_block{ DefaultImage := Images.Image015, DefaultDesiredSize := ImageSize}
+        MiniGameImage016 : texture_block = texture_block{ DefaultImage := Images.Image016, DefaultDesiredSize := ImageSize}
+        MiniGameImage017 : texture_block = texture_block{ DefaultImage := Images.Image017, DefaultDesiredSize := ImageSize}
+        MiniGameImage018 : texture_block = texture_block{ DefaultImage := Images.Image018, DefaultDesiredSize := ImageSize}
+        MiniGameImage019 : texture_block = texture_block{ DefaultImage := Images.Image019, DefaultDesiredSize := ImageSize}
+        MiniGameImage020 : texture_block = texture_block{ DefaultImage := Images.Image020, DefaultDesiredSize := ImageSize}
+        MiniGameImage021 : texture_block = texture_block{ DefaultImage := Images.Image021, DefaultDesiredSize := ImageSize}
+        MiniGameImage022 : texture_block = texture_block{ DefaultImage := Images.Image022, DefaultDesiredSize := ImageSize}
+        MiniGameImage023 : texture_block = texture_block{ DefaultImage := Images.Image023, DefaultDesiredSize := ImageSize}
+        MiniGameImage024 : texture_block = texture_block{ DefaultImage := Images.Image024, DefaultDesiredSize := ImageSize}
+        MiniGameImage025 : texture_block = texture_block{ DefaultImage := Images.Image025, DefaultDesiredSize := ImageSize}
+        MiniGameImage026 : texture_block = texture_block{ DefaultImage := Images.Image026, DefaultDesiredSize := ImageSize}
+        MiniGameImage027 : texture_block = texture_block{ DefaultImage := Images.Image027, DefaultDesiredSize := ImageSize}
+        MiniGameImage028 : texture_block = texture_block{ DefaultImage := Images.Image028, DefaultDesiredSize := ImageSize}
+        MiniGameImage029 : texture_block = texture_block{ DefaultImage := Images.Image029, DefaultDesiredSize := ImageSize}
+        MiniGameImage030 : texture_block = texture_block{ DefaultImage := Images.Image030, DefaultDesiredSize := ImageSize}
+        MiniGameImage031 : texture_block = texture_block{ DefaultImage := Images.Image031, DefaultDesiredSize := ImageSize}
+        MiniGameImage032 : texture_block = texture_block{ DefaultImage := Images.Image032, DefaultDesiredSize := ImageSize}
+        MiniGameImage033 : texture_block = texture_block{ DefaultImage := Images.Image033, DefaultDesiredSize := ImageSize}
+        MiniGameImage034 : texture_block = texture_block{ DefaultImage := Images.Image034, DefaultDesiredSize := ImageSize}
+        MiniGameImage035 : texture_block = texture_block{ DefaultImage := Images.Image035, DefaultDesiredSize := ImageSize}
+        MiniGameImage036 : texture_block = texture_block{ DefaultImage := Images.Image036, DefaultDesiredSize := ImageSize}
+        MiniGameImage037 : texture_block = texture_block{ DefaultImage := Images.Image037, DefaultDesiredSize := ImageSize}
+        MiniGameImage038 : texture_block = texture_block{ DefaultImage := Images.Image038, DefaultDesiredSize := ImageSize}
+        MiniGameImage039 : texture_block = texture_block{ DefaultImage := Images.Image039, DefaultDesiredSize := ImageSize}
+        MiniGameImage040 : texture_block = texture_block{ DefaultImage := Images.Image040, DefaultDesiredSize := ImageSize}
+        MiniGameImage041 : texture_block = texture_block{ DefaultImage := Images.Image041, DefaultDesiredSize := ImageSize}
+        MiniGameImage042 : texture_block = texture_block{ DefaultImage := Images.Image042, DefaultDesiredSize := ImageSize}
+        MiniGameImage043 : texture_block = texture_block{ DefaultImage := Images.Image043, DefaultDesiredSize := ImageSize}
+        MiniGameImage044 : texture_block = texture_block{ DefaultImage := Images.Image044, DefaultDesiredSize := ImageSize}
+        MiniGameImage045 : texture_block = texture_block{ DefaultImage := Images.Image045, DefaultDesiredSize := ImageSize}
+        MiniGameImage046 : texture_block = texture_block{ DefaultImage := Images.Image046, DefaultDesiredSize := ImageSize}
+        MiniGameImage047 : texture_block = texture_block{ DefaultImage := Images.Image047, DefaultDesiredSize := ImageSize}
+        MiniGameImage048 : texture_block = texture_block{ DefaultImage := Images.Image048, DefaultDesiredSize := ImageSize}
+        MiniGameImage049 : texture_block = texture_block{ DefaultImage := Images.Image049, DefaultDesiredSize := ImageSize}
+        MiniGameImage050 : texture_block = texture_block{ DefaultImage := Images.Image050, DefaultDesiredSize := ImageSize}
+        MiniGameImage051 : texture_block = texture_block{ DefaultImage := Images.Image051, DefaultDesiredSize := ImageSize}
+        MiniGameImage052 : texture_block = texture_block{ DefaultImage := Images.Image052, DefaultDesiredSize := ImageSize}
+        MiniGameImage053 : texture_block = texture_block{ DefaultImage := Images.Image053, DefaultDesiredSize := ImageSize}
+        MiniGameImage054 : texture_block = texture_block{ DefaultImage := Images.Image054, DefaultDesiredSize := ImageSize}
+        MiniGameImage055 : texture_block = texture_block{ DefaultImage := Images.Image055, DefaultDesiredSize := ImageSize}
+        MiniGameImage056 : texture_block = texture_block{ DefaultImage := Images.Image056, DefaultDesiredSize := ImageSize}
+        MiniGameImage057 : texture_block = texture_block{ DefaultImage := Images.Image057, DefaultDesiredSize := ImageSize}
+        MiniGameImage058 : texture_block = texture_block{ DefaultImage := Images.Image058, DefaultDesiredSize := ImageSize}
+        MiniGameImage059 : texture_block = texture_block{ DefaultImage := Images.Image059, DefaultDesiredSize := ImageSize}
+        MiniGameImage060 : texture_block = texture_block{ DefaultImage := Images.Image060, DefaultDesiredSize := ImageSize}
+        MiniGameImage061 : texture_block = texture_block{ DefaultImage := Images.Image061, DefaultDesiredSize := ImageSize}
+        MiniGameImage062 : texture_block = texture_block{ DefaultImage := Images.Image062, DefaultDesiredSize := ImageSize}
         }
 
-    var TextureWidget01:texture_block = texture_block{DefaultImage := Images.GameMode_1}
-    var TextureWidget02:texture_block = texture_block{DefaultImage := Images.GameMode_2}
-    var TextureWidget03:texture_block = texture_block{DefaultImage := Images.GameMode_3}
+    var TextureWidget01:texture_block = texture_block{DefaultImage := Images.Image001}
+    var TextureWidget02:texture_block = texture_block{DefaultImage := Images.Image002}
+    var TextureWidget03:texture_block = texture_block{DefaultImage := Images.Image003}
 
     var VoteNumber01 :int = 0 
     var VoteNumber02 :int = 0
@@ -50,14 +105,14 @@ VoteUICanvasDevice := class():
 
     var PlayerVoteWidget : canvas = canvas{}
 
-    InitPlayer(): void=         
+    InitVotePlayer(): void=         
         set VoteButton01 = button_loud{DefaultText := StringToMessage("VOTE")}
         set VoteButton02 = button_loud{DefaultText := StringToMessage("VOTE")}
         set VoteButton03 = button_loud{DefaultText := StringToMessage("VOTE")}
 
-        set TextureWidget01 = texture_block{DefaultImage := Images.GameMode_1,  DefaultDesiredSize := ImageSize}
-        set TextureWidget02 = texture_block{DefaultImage := Images.GameMode_2,  DefaultDesiredSize := ImageSize}
-        set TextureWidget03 = texture_block{DefaultImage := Images.GameMode_3,  DefaultDesiredSize := ImageSize}
+        set TextureWidget01 = texture_block{DefaultImage := Images.Image001,  DefaultDesiredSize := ImageSize}
+        set TextureWidget02 = texture_block{DefaultImage := Images.Image002,  DefaultDesiredSize := ImageSize}
+        set TextureWidget03 = texture_block{DefaultImage := Images.Image003,  DefaultDesiredSize := ImageSize}
        
         set PlayerVoteWidget = CreateUserUI()
             if(PlayerObj:=player [MyAgentObj], PlayerUI := GetPlayerUI[PlayerObj]): 
@@ -118,63 +173,57 @@ VoteUICanvasDevice := class():
         UICanvas :canvas = canvas:                
             Slots := array:               
                 canvas_slot:
-                    Anchors := anchors{Minimum := vector2{X := 0.3, Y := 0.2}, Maximum := vector2{X := 0.3, Y := 0.5}}
+                    Anchors := anchors{Minimum := vector2{X := 0.11, Y := 0.15}, Maximum := vector2{X := 0.35, Y := 0.615}}                          
                     Offsets := margin{Top := 0.0, Left := 0.0, Bottom := 0.0, Right := 0.0}
-                    Alignment := vector2{X := 0.5, Y := 0.5 }
+                    Alignment := vector2{X := 0.0, Y := 0.0 }
                     SizeToContent := true
                     Widget := TextureWidget01
                 canvas_slot:
-                    Anchors := anchors{Minimum := vector2{X := 0.5, Y := 0.2}, Maximum := vector2{X := 0.5, Y := 0.5}}                            
+                    Anchors := anchors{Minimum := vector2{X := 0.36, Y := 0.15}, Maximum := vector2{X := 0.6, Y := 0.615}}                          
                     Offsets := margin{Top := 0.0, Left := 0.0, Bottom := 0.0, Right := 0.0}
-                    Alignment := vector2{X := 0.5, Y := 0.5 }
+                    Alignment := vector2{X := 0.0, Y := 0.0 }
                     SizeToContent := true
                     Widget := TextureWidget02
                 canvas_slot:
-                    Anchors := anchors{Minimum := vector2{X := 0.7, Y := 0.2}, Maximum := vector2{X := 0.7, Y := 0.5}}                          
+                    Anchors := anchors{Minimum := vector2{X := 0.62, Y := 0.15}, Maximum := vector2{X := 0.86, Y := 0.615}}                          
                     Offsets := margin{Top := 0.0, Left := 0.0, Bottom := 0.0, Right := 0.0}
-                    Alignment := vector2{X := 0.5, Y := 0.5 }
+                    Alignment := vector2{X := 0.0, Y := 0.0 }
                     SizeToContent := true
                     Widget := TextureWidget03    
                 canvas_slot:
-                    Anchors := anchors {Minimum := vector2{X := 0.25, Y := 0.55}, Maximum := vector2{X := 0.36, Y := 0.55}} 
-                    Offsets := margin{Top := 0.0, Left:= 0.0, Right := 0.0, Bottom := 0.0}
-                    Alignment := vector2{X:= 0.0, Y := 0.5}
-                    SizeToContent := true
-                    ZOrder := 30
+                    Anchors := anchors{Minimum := vector2{X := 0.158, Y :=0.63}, Maximum := vector2{X := 0.31, Y := 0.7}}                          
+                    Offsets := margin{Top := 0.0, Left := 0.0, Bottom := 0.0, Right := 0.0}
+                    Alignment := vector2{X:= 0.0, Y := 0.0}
+                    SizeToContent := false
                     Widget := VoteButton01
                 canvas_slot:
-                    Anchors := anchors {Minimum := vector2{X := 0.45, Y := 0.55}, Maximum := vector2{X := 0.56, Y := 0.55}} 
-                    Offsets := margin{Top := 0.0, Left:= 0.0, Right := 0.0, Bottom := 0.0}
-                    Alignment := vector2{X:= 0.5, Y := 0.5}
-                    SizeToContent := true
-                    ZOrder := 30
+                    Anchors := anchors{Minimum := vector2{X := 0.41, Y :=0.63}, Maximum := vector2{X := 0.558, Y := 0.7}}                          
+                    Offsets := margin{Top := 0.0, Left := 0.0, Bottom := 0.0, Right := 0.0}
+                    Alignment := vector2{X:= 0.0, Y := 0.0}
+                    SizeToContent := false
                     Widget := VoteButton02
                 canvas_slot:
-                    Anchors := anchors {Minimum := vector2{X := 0.65, Y := 0.55}, Maximum := vector2{X := 0.76, Y := 0.55}} 
-                    Offsets := margin{Top := 0.0, Left:= 0.0, Right := 0.0, Bottom := 0.0}
-                    Alignment := vector2{X:= 0.0, Y := 0.5}
-                    SizeToContent := true
-                    ZOrder := 30
+                    Anchors := anchors{Minimum := vector2{X := 0.66, Y :=0.63}, Maximum := vector2{X := 0.818, Y := 0.7}}                          
+                    Offsets := margin{Top := 0.0, Left := 0.0, Bottom := 0.0, Right := 0.0}
+                    Alignment := vector2{X:= 0.0, Y := 0.0}
+                    SizeToContent := false
                     Widget := VoteButton03
                 canvas_slot:
-                    Anchors := anchors {Minimum := vector2{X := 0.25, Y := 0.55}, Maximum := vector2{X := 0.36, Y := 0.55}} 
-                    Offsets := margin{Top := 0.0, Left:= 0.0, Right := 0.0, Bottom := 0.0}
-                    Alignment := vector2{X:= 0.0, Y := 0.5}
+                    Anchors := anchors{Minimum := vector2{X := 0.2, Y := 0.645}, Maximum := vector2{X := 0.288, Y := 0.688}}                          
+                    Offsets := margin{Top := 0.0, Left := 0.0, Bottom := 0.0, Right := 0.0}
+                    Alignment := vector2{X:= 0.0, Y := 0.0}
                     SizeToContent := true
-                    ZOrder := 30
                     Widget := VoteText01
                 canvas_slot:
-                    Anchors := anchors {Minimum := vector2{X := 0.45, Y := 0.55}, Maximum := vector2{X := 0.56, Y := 0.55}} 
-                    Offsets := margin{Top := 0.0, Left:= 0.0, Right := 0.0, Bottom := 0.0}
-                    Alignment := vector2{X:= 0.5, Y := 0.5}
+                    Anchors := anchors{Minimum := vector2{X := 0.438, Y := 0.645}, Maximum := vector2{X := 0.532, Y := 0.688}}                          
+                    Offsets := margin{Top := 0.0, Left := 0.0, Bottom := 0.0, Right := 0.0}
+                    Alignment := vector2{X:= 0.0, Y := 0.0}
                     SizeToContent := true
-                    ZOrder := 30
                     Widget := VoteText02
                 canvas_slot:
-                    Anchors := anchors {Minimum := vector2{X := 0.65, Y := 0.55}, Maximum := vector2{X := 0.76, Y := 0.55}} 
-                    Offsets := margin{Top := 0.0, Left:= 0.0, Right := 0.0, Bottom := 0.0}
-                    Alignment := vector2{X:= 0.0, Y := 0.5}
+                    Anchors := anchors{Minimum := vector2{X := 0.7, Y := 0.645}, Maximum := vector2{X := 0.788, Y := 0.688}}                          
+                    Offsets := margin{Top := 0.0, Left := 0.0, Bottom := 0.0, Right := 0.0}
+                    Alignment := vector2{X:= 0.0, Y := 0.0}
                     SizeToContent := true
-                    ZOrder := 30
                     Widget := VoteText03
                

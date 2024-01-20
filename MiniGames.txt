@@ -1,0 +1,87 @@
+Sniper & RPG Wall Or Not ?
+# Under Work
+001PickaxeFight
+007BodyGuards
+0082XDamage
+010S2XSpeed
+016Invisible
+017Invincible
+018TelePort
+019D4XDamage
+021S4XSpeed
+
+# Under Fixed 
+059AnvilRocketLauncher
+
+# All
+000ClassicMode
+001PickaxeFight
+002BoogieBomb
+003DoublePump
+004InfinityAmmo
+005InstantReload
+006HarpoonGun
+007BodyGuards
+0082XDamage
+0092XHealth
+010S2XSpeed
+011F2XFly
+012L2NDLife
+013HealUp
+014ShieldUP
+015NewSeason
+016Invisible
+017Invincible
+018TelePort
+019D4XDamage
+020H4XHealth
+021S4XSpeed
+022F4XFly
+023DYNAMITEOnly
+024PistolsOnly
+025SHADOWBOMB
+026STINKBOMB
+027CHILLERGrenade
+028SHOCKWAVEGRENADE
+029ImpulseGRENADE
+030Grenades
+031CLINGER
+032FireFlyJar
+033FlareGun
+034ExplosiveBow
+035FlameBow
+036StinkBow
+037BoomBow
+038ShockwaveBow
+039DualFiendHunters
+040HunterCrossbow
+041CupidCrossbow
+042GrapplerBow
+043BoltActionSniper
+044HuntingRifle
+045BoomSniper
+046LeverAction
+047DragonBreathSniper
+048RailGun
+049HeavySniper
+050ExplosiveRepeater
+051RemoteExplosives
+052RocketLauncher
+053GrenadeLauncher
+054PumpkinLauncher
+055SnowballLauncher
+056EggLauncher
+057QuedLauncher
+058RipsawLauncher
+059AnvilRocketLauncher
+060ExplosiveGooGun
+061ZygAndChoppyRay
+
+
+
+# Idea
+062 Water
+063 Volcano
+064 Rest build
+065 cheken fight
+066 hog rider
